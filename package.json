@@ -1,0 +1,33 @@
+{
+  "name": "tmsimple",
+  "version": "1.0.0",
+  "description": "Simple Test Case Management System",
+  "scripts": {
+    "build": "tsc --build",
+    "eslint": "eslint src/**/**.{ts,tsx}",
+    "eslint:fix": "eslint src/**/**.{ts,tsx} --fix",
+    "start:server": "npm run -w @tmsimple/server start"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {    
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.7.13",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.9.1"
+  },
+  "author": "Daniel Jiménez Ortiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DanisaurioRex/tmsimple/issues"
+  },
+  "homepage": "https://github.com/DanisaurioRex/tmsimple#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanisaurioRex/tmsimple.git"
+  }
+}

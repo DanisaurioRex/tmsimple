@@ -1,22 +1,22 @@
 import * as express from "express";
-import { TestCaseService } from '../services/test-case/test-case.service';
-import TYPE from '../constant/types';
+import TYPE from '../types';
+import { ITestCaseService } from '../services/test-case/test-case.service';
 import { inject } from 'inversify';
-import { TestCase } from '../entity/test-case.entity';
-import { controller, httpPost, request, response } from "inversify-express-utils";
+import { TestCase } from '../entities/test-case.entity';
+import { controller, httpPost, request, response, interfaces } from "inversify-express-utils";
 
 @controller("/testcase")
-export class TestCaseController {
-    private readonly testCaseService: TestCaseService;
+export class TestCaseController implements interfaces.Controller {
+    private readonly testCaseService: ITestCaseService;
 
     constructor(
-        @inject(TYPE.TestCaseService) testCaseService: TestCaseService
+        @inject(TYPE.TestCaseService) testCaseService: ITestCaseService
     ) {
         this.testCaseService = testCaseService;
     }
 
     @httpPost('/')
-    private async create(@request() req: express.Request, @response() res: express.Response) {
+    public async create(@request() req: express.Request, @response() res: express.Response) {
         try {
             const testCase = new TestCase();
             Object.assign(testCase, req.body);

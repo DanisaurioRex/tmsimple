@@ -5,7 +5,7 @@ import { TestCaseType } from "./test-case-type.entity";
 @Entity()
 export class TestCase {
     @ObjectIdColumn()
-    id: string;
+    id?: string;
 
     @Column()
     description: string;

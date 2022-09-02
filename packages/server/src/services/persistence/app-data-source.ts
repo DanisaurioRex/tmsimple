@@ -1,6 +1,6 @@
 import { injectable } from 'inversify';
 import { DataSource } from "typeorm";
-import { TestCase } from "../../entity/test-case.entity";
+import { TestCase } from "../../entities/test-case.entity";
 
 const datasource = new DataSource({
     type: "mongodb",
@@ -17,13 +17,8 @@ const datasource = new DataSource({
 
 @injectable()
 export class AppDataSource {
-
-    public get DataSource() {
-        return datasource;
-    }
-
-    public get Manager() {
-        return datasource.manager;
+    public async save<Entity>(entity: Entity): Promise<Entity> {
+        return datasource.manager.save<Entity>(entity);
     }
 
     public async initialize(): Promise<void> {

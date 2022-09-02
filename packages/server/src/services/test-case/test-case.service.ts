@@ -1,10 +1,14 @@
 import { inject, injectable } from 'inversify';
-import TYPES from '../../constant/types';
-import { TestCase } from '../../entity/test-case.entity';
+import TYPES from '../../types';
+import { TestCase } from '../../entities/test-case.entity';
 import { AppDataSource } from '../persistence/app-data-source';
 
+export interface ITestCaseService {
+    create(testcase: TestCase): Promise<TestCase>
+}
+
 @injectable()
-export class TestCaseService {
+export class TestCaseService implements ITestCaseService {
     private appDataSource: AppDataSource;
 
     constructor(
@@ -15,7 +19,7 @@ export class TestCaseService {
 
     public async create(testcase: TestCase): Promise<TestCase> {
         try {
-            return this.appDataSource.Manager.save<TestCase>(testcase);
+            return this.appDataSource.save<TestCase>(testcase);
         } catch (error) {
             // debug error
             throw error;

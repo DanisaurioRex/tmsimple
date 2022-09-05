@@ -13,9 +13,6 @@
     "sourceMap": true,
     "esModuleInterop": true
   },
-  "include": [
-    "package/server"
-  ],
   "exclude": [
     "node_modules",
     "dist"

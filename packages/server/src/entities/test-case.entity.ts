@@ -10,11 +10,11 @@ export class TestCase {
     @Column()
     description: string;
 
-    // @Column()
-    // type: TestCaseType;
+    @Column()
+    type: TestCaseType;
 
-    // @Column()
-    // priority: TestCasePriority;
+    @Column()
+    priority: TestCasePriority;
 
     @Column()
     precondition: string;

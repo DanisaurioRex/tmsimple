@@ -21,7 +21,6 @@ export class TestCaseService implements ITestCaseService {
         try {
             return this.appDataSource.save<TestCase>(testcase);
         } catch (error) {
-            // debug error
             throw error;
         }
     }

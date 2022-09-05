@@ -3,7 +3,6 @@ import { describe, jest, expect } from '@jest/globals';
 import { AppDataSource } from '../../../../src/services/persistence/app-data-source';
 import { decorate, injectable } from 'inversify';
 import { TestCaseService } from "../../../../src/services/test-case/test-case.service";
-import { TestCase } from "../../../../src/entities/test-case.entity";
 import { TestCaseBuilder } from "../../../../src/entities/builders/test-case.builder";
 
 decorate(injectable(), AppDataSource);

@@ -4,7 +4,6 @@ import app from './app';
 import { describe, jest, beforeAll, expect, test } from '@jest/globals';
 import { AppDataSource } from '../../src/services/persistence/app-data-source';
 import { decorate, injectable } from 'inversify';
-import { TestCase } from "../../src/entities/test-case.entity";
 import { TestCaseBuilder } from "../../src/entities/builders/test-case.builder";
 import { cleanUpMetadata } from "inversify-express-utils/lib/utils";
 
@@ -22,7 +21,9 @@ describe('Test Case', () => {
     describe('Create', () => {
         test('When the test case is valid should return 200', async () => {
             // Given
-            const testCase = new TestCaseBuilder().randomTestData().build()
+            const testCase = new TestCaseBuilder()
+                .randomTestData()
+                .build()
 
             // When
             const server = app.build()
@@ -39,9 +40,9 @@ describe('Test Case', () => {
             {},
             { "descriptionn": "invalid property" },
             { "description": "ok", "type": "InvalidType" },
-            { "description": "ok", "priority": "InvalidPriority" },
+            { "description": "ok", "type": "Acceptance", "priority": "InvalidPriority" },
         ];
-        test.each(cases)('When the test case is invalid should return 400', async (jsonInput) => {
+        test.each(cases)('When the test case is invalid should return 400: %j', async (jsonInput) => {
             // When
             const server = app.build()
 

@@ -1,7 +1,7 @@
 export enum TestCaseType {
-    Acceptance,
-    Automation,
-    Funtional,
-    Regression,
-    Smoke
+    Acceptance = "Acceptance",
+    Automation = "Automation",
+    Funtional = "Funtional",
+    Regression = "Regression",
+    Smoke = "Smoke"
 }

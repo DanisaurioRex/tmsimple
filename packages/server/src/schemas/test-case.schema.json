@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "type": {
+            "enum": [
+                "Acceptance",
+                "Automation",
+                "Funtional",
+                "Regression",
+                "Smoke"
+            ]
+        },
+        "priority": {
+            "enum": [
+                "Critical",
+                "High",
+                "Medium",
+                "Low"
+            ]
+        },
+        "precondition": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "description",
+        "type",
+        "priority"
+    ],
+    "additionalProperties": false
+}

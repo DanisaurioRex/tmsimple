@@ -4,18 +4,18 @@ import { TestCaseType } from "./test-case-type.entity";
 
 @Entity()
 export class TestCase {
-    @ObjectIdColumn()
-    id?: string;
+  @ObjectIdColumn()
+  id?: string;
 
-    @Column()
-    description: string;
+  @Column()
+  description: string;
 
-    @Column()
-    type: TestCaseType;
+  @Column()
+  type: TestCaseType;
 
-    @Column()
-    priority: TestCasePriority;
+  @Column()
+  priority: TestCasePriority;
 
-    @Column()
-    precondition: string;
+  @Column()
+  precondition: string;
 }

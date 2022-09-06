@@ -1,6 +1,6 @@
 export enum TestCasePriority {
-    Critical,
-    High,
-    Medium,
-    Low
+  Critical,
+  High,
+  Medium,
+  Low,
 }

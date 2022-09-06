@@ -1,27 +1,21 @@
-import { inject, injectable } from 'inversify';
-import TYPES from '../../types';
-import { TestCase } from '../../entities/test-case.entity';
-import { AppDataSource } from '../persistence/app-data-source';
+import { inject, injectable } from "inversify";
+import TYPES from "../../types";
+import { TestCase } from "../../entities/test-case.entity";
+import { AppDataSource } from "../persistence/app-data-source";
 
 export interface ITestCaseService {
-    create(testcase: TestCase): Promise<TestCase>
+  create(testcase: TestCase): Promise<TestCase>;
 }
 
 @injectable()
 export class TestCaseService implements ITestCaseService {
-    private appDataSource: AppDataSource;
+  private appDataSource: AppDataSource;
 
-    constructor(
-        @inject(TYPES.AppDataSource) appDataSource: AppDataSource
-    ) {
-        this.appDataSource = appDataSource;
-    }
+  constructor(@inject(TYPES.AppDataSource) appDataSource: AppDataSource) {
+    this.appDataSource = appDataSource;
+  }
 
-    public async create(testcase: TestCase): Promise<TestCase> {
-        try {
-            return this.appDataSource.save<TestCase>(testcase);
-        } catch (error) {
-            throw error;
-        }
-    }
+  public async create(testcase: TestCase): Promise<TestCase> {
+    return this.appDataSource.save<TestCase>(testcase);
+  }
 }

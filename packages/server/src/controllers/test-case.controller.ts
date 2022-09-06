@@ -1,12 +1,17 @@
-import * as express from "express";
+import * as express from 'express';
 import TYPE from '../types';
 import { ITestCaseService } from '../services/test-case/test-case.service';
 import { inject } from 'inversify';
-import { controller, httpPost, request, response, interfaces } from "inversify-express-utils";
-import { ValidationError } from "../entities/exceptions/validation.error";
+import {
+    controller,
+    httpPost,
+    interfaces,
+    request,
+    response,
+} from 'inversify-express-utils';
+import { ValidationError } from '../entities/exceptions/validation.error';
 
-
-@controller("/testcase")
+@controller('/testcase')
 export class TestCaseController implements interfaces.Controller {
     private readonly testCaseService: ITestCaseService;
 
@@ -17,7 +22,10 @@ export class TestCaseController implements interfaces.Controller {
     }
 
     @httpPost('/')
-    public async create(@request() req: express.Request, @response() res: express.Response) {
+    public async create(
+        @request() req: express.Request,
+        @response() res: express.Response
+    ) {
         try {
             const testCase = this.testCaseService.validateAndParse(req.body);
             const createdTestCase = await this.testCaseService.save(testCase);
@@ -29,8 +37,6 @@ export class TestCaseController implements interfaces.Controller {
             } else {
                 res.status(500).json({ error: err.message }).send();
             }
-
         }
     }
 }
-

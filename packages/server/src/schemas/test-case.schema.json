@@ -17,21 +17,12 @@
             ]
         },
         "priority": {
-            "enum": [
-                "Critical",
-                "High",
-                "Medium",
-                "Low"
-            ]
+            "enum": ["Critical", "High", "Medium", "Low"]
         },
         "precondition": {
             "type": "string"
         }
     },
-    "required": [
-        "description",
-        "type",
-        "priority"
-    ],
+    "required": ["description", "type", "priority"],
     "additionalProperties": false
 }

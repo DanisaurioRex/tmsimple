@@ -1,4 +1,3 @@
-
 const TYPES = {
     AppDataSource: Symbol.for('AppDataSource'),
     TestCaseService: Symbol.for('TestCaseService'),

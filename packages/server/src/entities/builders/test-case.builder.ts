@@ -1,7 +1,7 @@
-import { TestCase } from "../test-case.entity";
+import { TestCase } from '../test-case.entity';
 import { faker } from '@faker-js/faker';
-import { TestCaseType } from "../test-case-type.entity";
-import { TestCasePriority } from "../test-case-priority.entity";
+import { TestCaseType } from '../test-case-type.entity';
+import { TestCasePriority } from '../test-case-priority.entity';
 
 export class TestCaseBuilder {
     private readonly testcase: TestCase;

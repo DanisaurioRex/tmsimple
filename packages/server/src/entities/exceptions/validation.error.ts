@@ -1,11 +1,10 @@
-import { CustomError } from 'ts-custom-error'
-
 export class ValidationError extends Error {
+    public static readonly Name = "ValidationError";
     private errors: any[]
 
     constructor(msg: string, errors?: any[]) {
         super(msg);
-        this.name = "ValidationError";
+        this.name = ValidationError.Name;
         this.errors = errors;
     }
 }

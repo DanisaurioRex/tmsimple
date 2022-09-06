@@ -1,7 +1,7 @@
 import "reflect-metadata"
 import request from 'supertest';
 import app from './app';
-import { describe, jest, beforeAll, expect, test } from '@jest/globals';
+import { describe, jest, expect, test } from '@jest/globals';
 import { AppDataSource } from '../../src/services/persistence/app-data-source';
 import { decorate, injectable } from 'inversify';
 import { TestCaseBuilder } from "../../src/entities/builders/test-case.builder";
@@ -11,16 +11,11 @@ decorate(injectable(), AppDataSource);
 jest.mock("../../src/services/persistence/app-data-source");
 
 describe('Test Case', () => {
-    let saveDatasourceSpy;
-
-    beforeAll(() => {
-        saveDatasourceSpy = jest.spyOn(AppDataSource.prototype, 'save')
-            .mockImplementation((entity) => Promise.resolve(entity));
-    });
-
     describe('Create', () => {
         test('When the test case is valid should return 200', async () => {
             // Given
+            const saveDatasourceSpy = jest.spyOn(AppDataSource.prototype, 'save')
+                .mockImplementation((entity) => Promise.resolve(entity));
             const testCase = new TestCaseBuilder()
                 .randomTestData()
                 .build()
@@ -51,6 +46,25 @@ describe('Test Case', () => {
                 .post('/testcase')
                 .send(jsonInput)
                 .expect(400);
+        });
+
+        test('When an error occurs while saving a test case should return 500', async () => {
+            // Given
+            const error = new Error('Unexpected Error');
+            jest.spyOn(AppDataSource.prototype, 'save')
+                .mockImplementation(() => Promise.reject(error))
+            const testCase = new TestCaseBuilder()
+                .randomTestData()
+                .build()
+
+            // When
+            const server = app.build()
+
+            // Then
+            await request(server)
+                .post('/testcase')
+                .send(testCase)
+                .expect(500, { "error": error.message });
         });
     });
 

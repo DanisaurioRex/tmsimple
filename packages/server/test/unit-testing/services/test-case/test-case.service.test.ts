@@ -18,7 +18,7 @@ describe('Test Case', () => {
                 .mockImplementation((entity) => Promise.resolve(entity));
 
             // Act
-            service.create(testCase);
+            service.save(testCase);
 
             // Assert
             expect(saveDatasourceSpy).toHaveBeenNthCalledWith(1, testCase);
@@ -33,7 +33,7 @@ describe('Test Case', () => {
                 .mockImplementation(() => Promise.reject(error))
 
             // Act
-            const result = () => service.create(testCase);
+            const result = () => service.save(testCase);
 
             // Assert
             await expect(result).rejects.toThrowError(error);

@@ -12,7 +12,7 @@ jest.mock('../../src/services/persistence/app-data-source');
 
 describe('Test Case', () => {
     describe('Create', () => {
-        test('When the test case is valid should return 200', async () => {
+        test('When the test case is valid should return 201', async () => {
             // Given
             const saveDatasourceSpy = jest
                 .spyOn(AppDataSource.prototype, 'save')
@@ -27,29 +27,22 @@ describe('Test Case', () => {
             expect(saveDatasourceSpy).toHaveBeenNthCalledWith(1, testCase);
         });
 
-        const cases = [
-            {},
-            { descriptionn: 'invalid property' },
-            { description: 'ok', type: 'InvalidType' },
-            {
-                description: 'ok',
-                type: 'Acceptance',
+        test('When the test case is invalid should return 400', async () => {
+            // Given
+            const invalidJsonInput = {
+                descriptionn: 'Aditional Property',
+                type: 'InvalidType',
                 priority: 'InvalidPriority',
-            },
-        ];
-        test.each(cases)(
-            'When the test case is invalid should return 400: %j',
-            async (jsonInput) => {
-                // When
-                const server = app.build();
+            };
+            // When
+            const server = app.build();
 
-                // Then
-                await request(server)
-                    .post('/testcase')
-                    .send(jsonInput)
-                    .expect(400);
-            }
-        );
+            // Then
+            await request(server)
+                .post('/testcase')
+                .send(invalidJsonInput)
+                .expect(400);
+        });
 
         test('When an error occurs while saving a test case should return 500', async () => {
             // Given

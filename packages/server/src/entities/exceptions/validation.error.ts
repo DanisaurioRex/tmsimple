@@ -1,12 +1,10 @@
-import { ErrorObject } from 'ajv';
-
 export class ValidationError extends Error {
     public static readonly Name = 'ValidationError';
-    private errors: ErrorObject[];
+    public errorMessages: string[];
 
-    constructor(msg: string, errors?: ErrorObject[]) {
-        super(msg);
+    constructor(msg: string, errorMessages?: string[]) {
+        super(msg + errorMessages);
         this.name = ValidationError.Name;
-        this.errors = errors;
+        this.errorMessages = errorMessages;
     }
 }

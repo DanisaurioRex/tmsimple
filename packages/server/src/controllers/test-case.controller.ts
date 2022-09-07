@@ -33,7 +33,8 @@ export class TestCaseController implements interfaces.Controller {
             res.status(201).json(createdTestCase).send();
         } catch (err) {
             if (err.name == ValidationError.Name) {
-                res.status(400).json({ error: err.message }).send();
+                const validationError = err as ValidationError;
+                res.status(400).json({ errors: validationError.errorMessages }).send();
             } else {
                 res.status(500).json({ error: err.message }).send();
             }

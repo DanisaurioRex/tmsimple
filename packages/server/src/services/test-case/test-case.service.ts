@@ -6,7 +6,8 @@ import Ajv from 'ajv';
 import { ValidationError } from '../../entities/exceptions/validation.error';
 import testCaseSchema from '../../schemas/test-case.schema.json';
 
-const ajv = new Ajv();
+const ajv = new Ajv({ allErrors: true });
+require('ajv-errors')(ajv /*, {singleError: true} */);
 const validate = ajv.compile(testCaseSchema);
 
 export interface ITestCaseService {
@@ -37,7 +38,10 @@ export class TestCaseService implements ITestCaseService {
 
             return testCase;
         } else {
-            throw new ValidationError('Invalid Data', validate.errors);
+            throw new ValidationError(
+                'Invalid Data: ',
+                validate.errors.flatMap((e) => e.message)
+            );
         }
     }
 }

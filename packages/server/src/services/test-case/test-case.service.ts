@@ -7,6 +7,7 @@ import { ValidationError } from '../../entities/exceptions/validation.error';
 import testCaseSchema from '../../schemas/test-case.schema.json';
 
 const ajv = new Ajv({ allErrors: true });
+//eslint-disable-next-line @typescript-eslint/no-var-requires
 require('ajv-errors')(ajv /*, {singleError: true} */);
 const validate = ajv.compile(testCaseSchema);
 

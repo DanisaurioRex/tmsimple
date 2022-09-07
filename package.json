@@ -4,11 +4,12 @@
     "description": "Simple Test Case Management System",
     "scripts": {
         "build": "tsc --build",
-        "eslint": "eslint packages/**/**.ts",
-        "eslint:fix": "eslint packages/**/**.ts --fix",
+        "eslint": "eslint . --ext .ts",
+        "eslint:fix": "eslint . --ext .ts --fix",
         "prettier": "prettier --check .",
         "prettier:fix": "prettier --write .   ",
-        "start:server": "npm run -w @tmsimple/server start"
+        "start:server": "npm run -w @tmsimple/server start",
+        "test:server": "npm run -w @tmsimple/server test"
     },
     "workspaces": [
         "packages/*"

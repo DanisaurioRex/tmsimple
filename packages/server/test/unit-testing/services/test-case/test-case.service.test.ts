@@ -55,7 +55,7 @@ describe('Test Case', () => {
             };
 
             // Act
-            let result = service.validateAndParse(jsonInput);
+            const result = service.validateAndParse(jsonInput);
 
             // Assert
             expect(result).not.toBeNull();

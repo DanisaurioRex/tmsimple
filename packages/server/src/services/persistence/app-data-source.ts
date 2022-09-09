@@ -3,6 +3,7 @@ import { DataSource } from 'typeorm';
 import { TestCase } from '../../entities/test-case.entity';
 
 const datasource = new DataSource({
+    host: process.env['DB_HOST'] ?? 'localhost',
     type: 'mongodb',
     database: 'test',
     synchronize: true,

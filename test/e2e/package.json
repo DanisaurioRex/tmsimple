@@ -10,15 +10,16 @@
     },
     "scripts": {
         "build": "tsc --build",
-        "api-test": "cypress run --spec 'cypress/e2e/api/**/*'"
+        "api-test": "wait-on http-get://localhost:3000 && cypress run --spec 'cypress/e2e/api/**/*'"
     },
     "devDependencies": {
         "typescript": "^4.8.3"
     },
     "dependencies": {
-        "mongodb": "^4.9.1",
+        "@faker-js/faker": "^7.5.0",
         "cypress": "^10.7.0",
         "cypress-mongodb": "^5.0.1",
-        "@faker-js/faker": "^7.5.0"
+        "mongodb": "^4.9.1",
+        "wait-on": "^6.0.1"
     }
 }

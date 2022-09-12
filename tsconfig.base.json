@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "incremental": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "exactOptionalPropertyTypes": true,
@@ -8,6 +9,7 @@
         "noUncheckedIndexedAccess": true,
         "noImplicitOverride": true,
         "noPropertyAccessFromIndexSignature": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "composite": true
     }
 }

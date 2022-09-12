@@ -28,11 +28,19 @@ jobs:
     - run: npm ci
     - run: npm run eslint
     - run: npm run prettier
-  test:
-    name: Tests
+  unit-test:
+    name: Unit Tests
     needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - run: npm ci
-    - run: npm run test:server
+    - run: npm run unit-test:server
+  component-test:
+    name: Component Tests
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: npm ci
+    - run: npm run component-test:server

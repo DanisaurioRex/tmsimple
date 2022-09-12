@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import request from 'supertest';
 import app from './app';
-import { describe, expect, jest, test } from '@jest/globals';
+import { describe, expect, jest, test, afterEach } from '@jest/globals';
 import { AppDataSource } from '../../src/services/persistence/app-data-source';
 import { decorate, injectable } from 'inversify';
 import { TestCaseBuilder } from '../../src/entities/builders/test-case.builder';

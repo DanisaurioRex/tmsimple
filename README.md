@@ -22,3 +22,11 @@ Self-Study project to update knowledge about:
     ```
 
 1. The server is running on <http://localhost:3000>.
+
+## Test
+
+| Component | Test Type      | Technology | Command                         |
+| --------- | -------------- | ---------- | ------------------------------- |
+| Server    | Unit Test      | Jest       | `npm run unit-test:server`      |
+| Server    | Component Test | Jest       | `npm run component-test:server` |
+| Server    | E2E / API Test | Cypress    | `npm run api-test`              |

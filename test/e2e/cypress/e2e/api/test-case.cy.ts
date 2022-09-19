@@ -4,6 +4,7 @@ describe('Test Case API', () => {
     const createTestCases = [];
     it('Create a Test Case', () => {
         const document = {
+            name: faker.lorem.sentence(10),
             description: faker.datatype.string(200),
             type: 'Acceptance',
             priority: 'Low',

@@ -5,6 +5,7 @@ import TYPES from './types';
 import { AppDataSource } from './services/persistence/app-data-source';
 import { InversifyExpressServer } from 'inversify-express-utils';
 import container from './inversify.config';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ server.setConfig((app) => {
         })
     );
     app.use(bodyParser.json());
+    app.use(cors());
 });
 
 const appDataSource = container.get<AppDataSource>(TYPES.AppDataSource);

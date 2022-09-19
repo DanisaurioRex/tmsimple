@@ -23,7 +23,6 @@
         "@typescript-eslint/parser": "^5.36.2",
         "cypress": "^10.7.0",
         "cypress-mongodb": "^5.0.1",
-        "wait-on": "^6.0.1",
         "eslint": "^8.23.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-config-standard-with-typescript": "^22.0.0",
@@ -33,12 +32,13 @@
         "mocha": "^10.0.0",
         "prettier": "2.7.1",
         "ts-node": "^10.9.1",
-        "typescript": "^4.8.2"
+        "typescript": "^4.8.2",
+        "wait-on": "^6.0.1"
     },
     "author": "Daniel Jiménez Ortiz",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/DanisaurioRex/tmsimple/issues"
+        "url": "https://github.com/DanisaurioRex/tmsimple/testCases"
     },
     "homepage": "https://github.com/DanisaurioRex/tmsimple#readme",
     "repository": {

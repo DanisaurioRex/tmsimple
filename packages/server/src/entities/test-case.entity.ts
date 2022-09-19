@@ -11,6 +11,9 @@ export class TestCase {
     description: string;
 
     @Column()
+    name: string;
+
+    @Column()
     type: TestCaseType;
 
     @Column()

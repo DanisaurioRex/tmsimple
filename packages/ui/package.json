@@ -1,0 +1,56 @@
+{
+    "name": "@tmsimple/ui",
+    "version": "1.0.0",
+    "description": "TMSimple Graphic Interface",
+    "scripts": {
+        "start": "webpack serve --hot",
+        "build": "cross-env NODE_ENV=production webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/DanisaurioRex/tmsimple.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/DanisaurioRex/tmsimple/testCases"
+    },
+    "homepage": "https://github.com/DanisaurioRex/tmsimple#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.18.10",
+        "@babel/core": "^7.19.1",
+        "@babel/preset-env": "^7.19.1",
+        "@babel/preset-react": "^7.18.6",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
+        "babel-loader": "^8.2.5",
+        "cross-env": "^7.0.3",
+        "css-loader": "^6.7.1",
+        "html-webpack-plugin": "^5.5.0",
+        "react-refresh": "^0.14.0",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.74.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.11.0"
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "^1.8.5",
+        "core-js": "^3.25.2",
+        "file-loader": "^6.2.0",
+        "formik": "^2.2.9",
+        "history": "^5.3.0",
+        "lodash": "^4.17.21",
+        "moment": "^2.29.4",
+        "query-string": "^7.1.1",
+        "quill": "^1.3.7",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-redux": "^8.0.2",
+        "react-router-dom": "^6.4.0",
+        "react-textarea-autosize": "^8.3.4",
+        "regenerator-runtime": "^0.13.9",
+        "sweet-pubsub": "^1.1.2",
+        "url-loader": "^4.1.1",
+        "yup": "^0.32.11"
+    }
+}

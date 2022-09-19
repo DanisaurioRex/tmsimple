@@ -15,6 +15,11 @@ export class TestCaseBuilder {
         return this;
     }
 
+    public name(name: string): TestCaseBuilder {
+        this.testcase.name = name;
+        return this;
+    }
+
     public type(type: TestCaseType): TestCaseBuilder {
         this.testcase.type = type;
         return this;
@@ -37,6 +42,7 @@ export class TestCaseBuilder {
 
     public randomTestData(): TestCaseBuilder {
         this.id(faker.database.mongodbObjectId());
+        this.name(faker.lorem.sentence());
         this.description(faker.lorem.paragraph());
         this.precondition(faker.lorem.paragraph());
         this.type(this.getRandomEnumValue(TestCaseType));

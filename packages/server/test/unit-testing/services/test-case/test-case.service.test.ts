@@ -49,6 +49,7 @@ describe('Test Case', () => {
             // Arrange
             const service = new TestCaseService(new AppDataSource());
             const jsonInput = {
+                name: 'ok',
                 description: 'ok',
                 type: 'Acceptance',
                 priority: 'Low',

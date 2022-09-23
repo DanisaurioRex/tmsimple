@@ -35,7 +35,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: npm ci
-    - uses: stefanoeb/jest-action@1.0.3
+    - uses: stefanoeb/jest-action@1.0.4
       with:
         jestArgs: packages/server/test/unit-testing/*.test.*
   component-test:

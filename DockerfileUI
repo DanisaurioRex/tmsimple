@@ -1,0 +1,15 @@
+FROM node:16
+
+WORKDIR /usr/src/ui
+
+COPY packages/ui/package*.json ./
+COPY packages/ui/.babelrc ./
+
+RUN npm install
+
+COPY packages/ui/. .
+
+RUN npm run build
+
+EXPOSE 80
+

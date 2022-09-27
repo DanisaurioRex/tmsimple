@@ -27,6 +27,7 @@ const propTypes = {
         PropTypes.number,
     ]),
     defaultValue: PropTypes.any,
+    dataTest: PropTypes.string,
     placeholder: PropTypes.string,
     invalid: PropTypes.bool,
     options: PropTypes.array.isRequired,
@@ -45,6 +46,7 @@ const defaultProps = {
     name: undefined,
     value: undefined,
     defaultValue: undefined,
+    dataTest: undefined,
     placeholder: 'Select',
     invalid: false,
     onCreate: undefined,
@@ -61,6 +63,7 @@ const Select = ({
     name,
     value: propsValue,
     defaultValue,
+    dataTest,
     placeholder,
     invalid,
     options,
@@ -159,7 +162,7 @@ const Select = ({
         >
             <ValueContainer
                 variant={variant}
-                data-testid={name ? `select:${name}` : 'select'}
+                data-test={dataTest ?? `select_${name}`}
                 onClick={activateDropdown}
             >
                 {isValueEmpty && <Placeholder>{placeholder}</Placeholder>}
@@ -208,6 +211,7 @@ const Select = ({
                     isValueEmpty={isValueEmpty}
                     searchValue={searchValue}
                     setSearchValue={setSearchValue}
+                    dataTest={`${dataTest}_input_search`}
                     $selectRef={$selectRef}
                     $inputRef={$inputRef}
                     deactivateDropdown={deactivateDropdown}

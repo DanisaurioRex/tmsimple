@@ -8,9 +8,10 @@ module.exports = {
 	mode: isDevelopment ? 'development' : 'production',
 	devServer: {
 		client: { overlay: false },
+		port: 80
 	},
 	entry: {
-		main: './src/index.jsx',
+		serverEntry: ['./src/index.jsx']
 	},
 	module: {
 		rules: [
@@ -39,6 +40,11 @@ module.exports = {
 				}
 			}
 		],
+	},
+	resolveLoader: {
+		modules: [
+			path.join(__dirname, 'node_modules')
+		]
 	},
 	plugins: [
 		isDevelopment && new ReactRefreshPlugin(),

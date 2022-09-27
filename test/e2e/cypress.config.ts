@@ -3,7 +3,7 @@ import { configurePlugin } from 'cypress-mongodb';
 
 module.exports = defineConfig({
     e2e: {
-        baseUrl: 'http://localhost:3000',
+        baseUrl: 'http://localhost:8080',
         video: false,
         setupNodeEvents(on, config) {
             configurePlugin(on);
@@ -14,5 +14,6 @@ module.exports = defineConfig({
             uri: 'mongodb://localhost:27017',
             database: 'test',
         },
+        serverUrl: 'http://localhost:3000',
     },
 });

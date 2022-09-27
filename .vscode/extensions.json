@@ -1,6 +1,3 @@
 {
-    "recommendations": [
-        "esbenp.prettier-vscode",
-        "iulian-radu-at.find-unused-exports"
-    ]
+    "recommendations": ["esbenp.prettier-vscode"]
 }

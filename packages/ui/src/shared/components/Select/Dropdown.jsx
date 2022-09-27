@@ -19,6 +19,7 @@ const propTypes = {
     isValueEmpty: PropTypes.bool.isRequired,
     searchValue: PropTypes.string.isRequired,
     setSearchValue: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
     $inputRef: PropTypes.object.isRequired,
     deactivateDropdown: PropTypes.func.isRequired,
     options: PropTypes.array.isRequired,
@@ -32,6 +33,7 @@ const propTypes = {
 const defaultProps = {
     dropdownWidth: undefined,
     value: undefined,
+    dataTest: undefined,
     onCreate: undefined,
     propsRenderOption: undefined,
 };
@@ -42,6 +44,7 @@ const SelectDropdown = ({
     isValueEmpty,
     searchValue,
     setSearchValue,
+    dataTest,
     $inputRef,
     deactivateDropdown,
     options,
@@ -207,6 +210,7 @@ const SelectDropdown = ({
             <DropdownInput
                 type="text"
                 placeholder="Search"
+                data-test={dataTest}
                 ref={$inputRef}
                 autoFocus
                 onKeyDown={handleInputKeyDown}
@@ -222,7 +226,7 @@ const SelectDropdown = ({
                     <Option
                         key={option.value}
                         data-select-option-value={option.value}
-                        data-testid={`select-option:${option.label}`}
+                        data-test={`select-option:${option.label}`}
                         onMouseEnter={handleOptionMouseEnter}
                         onClick={() => selectOptionValue(option.value)}
                     >

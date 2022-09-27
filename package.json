@@ -11,7 +11,8 @@
         "start:server": "npm run -w @tmsimple/server start",
         "unit-test:server": "npm run -w @tmsimple/server unit-test",
         "component-test:server": "npm run -w @tmsimple/server component-test",
-        "api-test": "npm --prefix ./test/e2e run api-test"
+        "api-test": "npm --prefix ./test/e2e run api-test",
+        "ui-test": "npm --prefix ./test/e2e run ui-test"
     },
     "workspaces": [
         "packages/*"

@@ -6,12 +6,15 @@ Self-Study project to update knowledge about:
 
 -   Nodejs
 -   Express
+-   React Js
 -   Mongodb
 -   Jest
+-   Cypress
 -   ESLint
 -   Prettier
 -   Docker
--   Github Workflows
+-   `Github Workflows`
+-   Webpack
 
 ## Getting started
 

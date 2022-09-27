@@ -1,4 +1,4 @@
-FROM mongo-express:latest
+FROM node:latest
 
 WORKDIR /usr/src/app
 

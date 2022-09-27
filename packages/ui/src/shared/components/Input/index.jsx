@@ -7,6 +7,7 @@ const propTypes = {
     className: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     icon: PropTypes.string,
+    dataTest: PropTypes.string,
     invalid: PropTypes.bool,
     filter: PropTypes.instanceOf(RegExp),
     onChange: PropTypes.func,
@@ -16,13 +17,14 @@ const defaultProps = {
     className: undefined,
     value: undefined,
     icon: undefined,
+    dataTest: undefined,
     invalid: false,
     filter: undefined,
     onChange: () => {},
 };
 
 const Input = forwardRef(
-    ({ icon, className, filter, onChange, ...inputProps }, ref) => {
+    ({ icon, className, filter, dataTest, onChange, ...inputProps }, ref) => {
         const handleChange = (event) => {
             if (!filter || filter.test(event.target.value)) {
                 onChange(event.target.value, event);
@@ -36,6 +38,7 @@ const Input = forwardRef(
                     {...inputProps}
                     onChange={handleChange}
                     hasIcon={!!icon}
+                    data-test={dataTest ?? inputProps.name}
                     ref={ref}
                 />
             </StyledInput>

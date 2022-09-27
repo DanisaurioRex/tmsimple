@@ -10,6 +10,7 @@ const propTypes = {
     placeholder: PropTypes.string,
     defaultValue: PropTypes.string,
     value: PropTypes.string,
+    dataTest: PropTypes.string,
     onChange: PropTypes.func,
     getEditor: PropTypes.func,
 };
@@ -19,6 +20,7 @@ const defaultProps = {
     placeholder: undefined,
     defaultValue: undefined,
     value: undefined,
+    dataTest: undefined,
     onChange: () => {},
     getEditor: () => {},
 };
@@ -27,10 +29,8 @@ const TextEditor = ({
     className,
     placeholder,
     defaultValue,
-    // we're not really feeding new value to quill instance on each render because it's too
-    // expensive, but we're still accepting 'value' prop as alias for defaultValue because
-    // other components like <Form.Field> feed their children with data via the 'value' prop
     value: alsoDefaultValue,
+    dataTest,
     onChange,
     getEditor,
 }) => {
@@ -66,7 +66,11 @@ const TextEditor = ({
     }, []);
 
     return (
-        <EditorCont className={className} ref={$editorContRef}>
+        <EditorCont
+            className={className}
+            data-test={dataTest}
+            ref={$editorContRef}
+        >
             <div ref={$editorRef} />
         </EditorCont>
     );

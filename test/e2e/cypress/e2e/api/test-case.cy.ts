@@ -10,7 +10,11 @@ describe('Test Case API', () => {
             priority: 'Low',
         };
 
-        cy.request('POST', 'testcase', document).should((response) => {
+        cy.request(
+            'POST',
+            Cypress.env('serverUrl') + '/testcase',
+            document
+        ).should((response) => {
             const query = { description: response.body.description };
 
             cy.findOne(query, { collection: 'test_case' }).then(

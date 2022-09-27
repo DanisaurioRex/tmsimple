@@ -55,12 +55,14 @@ const TestCaseCreate = ({ modalClose }) => {
                     name="name"
                     label="Name"
                     tip="Concisely summarize the test Case in one or two sentences."
+                    dataTest="input_name"
                 />
 
                 <Form.Field.TextEditor
                     name="description"
                     label="Description"
                     tip="Describe the test case in as much detail as you'd like."
+                    dataTest="input_description"
                 />
 
                 <Divider />
@@ -72,6 +74,7 @@ const TestCaseCreate = ({ modalClose }) => {
                     options={typeOptions}
                     renderOption={renderType}
                     renderValue={renderType}
+                    dataTest="select_test_type"
                 />
 
                 <Form.Field.Select
@@ -80,12 +83,14 @@ const TestCaseCreate = ({ modalClose }) => {
                     options={priorityOptions}
                     renderOption={renderPriority}
                     renderValue={renderPriority}
+                    dataTest="select_test_priority"
                 />
                 <Actions>
                     <ActionButton
                         type="submit"
                         variant="primary"
                         isWorking={isCreating}
+                        data-test="button_submit"
                     >
                         Create TestCase
                     </ActionButton>

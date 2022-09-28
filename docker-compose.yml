@@ -2,29 +2,32 @@ version: "3.9"
 
 services:
   server:
+    container_name: "Server"
     depends_on:
-      - mongodb
-    build:
-      context: .
-      dockerfile: ./DockerfileServer
+      - mongodb    
     environment:
       - PORT=3000
       - DB_HOST=mongodb
+    build:
+      context: ./packages/server
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     command: ["node", "dist/src/app.js"]
 
   ui:
+    container_name: "UI"
     depends_on:
       - server
     build:
-      context: .
-      dockerfile: ./DockerfileUI
+      context: ./packages/ui
+      dockerfile: ./Dockerfile
     ports:
       - "8080:80"
     command: ["npx", "webpack", "serve"]
 
   mongodb:
+    container_name: "DB"
     image: mongo
     ports:
       - "27017:27017"

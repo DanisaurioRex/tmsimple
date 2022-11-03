@@ -28,22 +28,40 @@ jobs:
     - run: npm ci
     - run: npm run eslint
     - run: npm run prettier
-  unit-test:
-    name: Unit Tests
+  unit-test-server:
+    name: Server Unit Tests
     needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - run: npm ci
     - run: npm run unit-test:server
-  component-test:
-    name: Component Tests
+  unit-test-ui:
+    name: UI Unit Tests
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: npm run build:ui-components
+    - run: npm run unit-test:ui
+  component-test-server:
+    name: Server Component Tests
     needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - run: npm ci
     - run: npm run component-test:server
+  component-test-ui:
+    name: UI Component Tests
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: cypress-io/github-action@v4.2.2
+      with:
+        working-directory: ./packages/ui
+        component: true
   e2e-test:
     name: E2E Tests
     needs: build
@@ -51,6 +69,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: isbang/compose-action@v1.2.0
-    - uses: cypress-io/github-action@v4.2.0
+    - uses: cypress-io/github-action@v4.2.2
       with:
         project: ./test/e2e

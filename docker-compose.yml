@@ -12,8 +12,7 @@ services:
       context: ./packages/server
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    command: ["node", "dist/src/app.js"]
+      - "3000:3000"    
 
   ui:
     container_name: "UI"
@@ -23,8 +22,7 @@ services:
       context: ./packages/ui
       dockerfile: ./Dockerfile
     ports:
-      - "8080:80"
-    command: ["npx", "webpack", "serve"]
+      - "80:4201"
 
   mongodb:
     container_name: "DB"

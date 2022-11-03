@@ -11,7 +11,7 @@
     "scripts": {
         "build": "tsc --build",
         "api-test": "wait-on http-get://localhost:3000 && cypress run --spec 'cypress/e2e/api/**/*'",
-        "ui-test": "wait-on http-get://localhost:8080 && cypress run --spec 'cypress/e2e/ui/**/*'"
+        "ui-test": "wait-on http-get://localhost:80 && cypress run --spec 'cypress/e2e/ui/**/*'"
     },
     "devDependencies": {
         "typescript": "^4.8.3"

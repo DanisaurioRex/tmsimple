@@ -4,21 +4,23 @@
     "description": "Simple Test Case Management System",
     "scripts": {
         "build": "tsc --build",
+        "build:ui-components": "npm install -g @angular/cli@latest && cd packages/ui && npm install",
         "eslint": "eslint . --ext .ts",
         "eslint:fix": "eslint . --ext .ts --fix",
         "prettier": "prettier --check .",
         "prettier:fix": "prettier --write .   ",
         "start:server": "npm run -w @tmsimple/server start",
         "unit-test:server": "npm run -w @tmsimple/server unit-test",
+        "unit-test:ui": "npm --prefix ./packages/ui run test",
         "component-test:server": "npm run -w @tmsimple/server component-test",
+        "component-test:ui": "npm --prefix ./packages/ui run component-test",
         "api-test": "npm --prefix ./test/e2e run api-test",
         "ui-test": "npm --prefix ./test/e2e run ui-test"
     },
     "workspaces": [
-        "packages/*"
+        "packages/server"
     ],
     "devDependencies": {
-        "@types/mocha": "^9.1.1",
         "@types/node": "^18.7.13",
         "@typescript-eslint/eslint-plugin": "^5.36.1",
         "@typescript-eslint/parser": "^5.36.2",

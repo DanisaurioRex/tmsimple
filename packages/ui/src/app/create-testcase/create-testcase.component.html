@@ -1,0 +1,37 @@
+<div>
+    <form>
+        <div class="title">Create Test Case</div>
+        <div>
+            <fieldset>
+                <label>Name</label>
+                <input id="name" name="name" data-test="input_name" />
+				<div class="hint">Concisely summarize the test Case in one or two sentences.</div>
+            </fieldset>
+			<fieldset>
+                <label>Description</label>
+                <textarea id="input_description" name="input_description" data-test="input_description" >
+				</textarea>
+				<div class="hint">Describe the test case in as much detail as you'd like.</div>
+            </fieldset>
+			<fieldset>
+                <label>Test Case Type</label>
+                <select name="select_test_type"  data-test="select_test_type">
+					<option [value]="item" *ngFor="let item of testCaseTypesList">{{item}}</option>
+				</select>
+				<div class="hint">Start typing to get a list of possible matches.</div>
+            </fieldset>
+			<fieldset>
+                <label>Priority</label>
+                <select name="select_test_priority"  data-test="select_test_priority">
+					<option [value]="item" *ngFor="let item of testCasePriorityList">{{item}}</option>
+				</select>
+				<div class="hint">Start typing to get a list of possible matches.</div>
+            </fieldset>
+			<fieldset class="buttons_container">
+				<button type="submit" class="primary" data-test="button_submit">
+					<div>Create TestCase</div>
+				</button>
+			</fieldset>			
+        </div>
+    </form>
+</div>

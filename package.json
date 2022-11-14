@@ -14,9 +14,6 @@
         "api-test": "npm --prefix ./test/e2e run api-test",
         "ui-test": "npm --prefix ./test/e2e run ui-test"
     },
-    "workspaces": [
-        "packages/*"
-    ],
     "devDependencies": {
         "@types/mocha": "^9.1.1",
         "@types/node": "^18.7.13",

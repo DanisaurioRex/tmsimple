@@ -1,14 +1,10 @@
-form {
+/* 
+ form {
     display: block;
     margin-top: 0px;
     padding: 25px 40px 35px;
 }
 
-form .title {
-    padding-bottom: 15px;
-    font-size: 21px;
-    font-weight: normal;
-}
 
 fieldset {
     width: 100%;
@@ -33,9 +29,7 @@ label {
     font-family: 'CircularStdMedium';
 }
 
-input,
-textarea,
-select {
+mat-form-field {
     width: 100%;
     border-radius: 3px;
     border: 1px solid #dfe1e6;
@@ -110,4 +104,10 @@ button.primary {
     padding-top: 30px;
 	margin: 0;
 	border: 0;
+}  */
+
+
+mat-form-field {
+	width: 100%;	
+	margin: 5px 0;
 }

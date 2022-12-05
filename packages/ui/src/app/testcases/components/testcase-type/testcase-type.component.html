@@ -1,0 +1,17 @@
+<ng-container>
+    <nz-select
+        id="select_test_type"
+        data-test="select_test_type"
+        [(ngModel)]="type"
+        (ngModelChange)="onTypeChange($event)"
+        nzAllowClear
+        nzShowSearch="true"
+    >
+        <nz-option
+            nzValue="{{ item }}"
+            nzLabel="{{ item }}"
+            *ngFor="let item of testCaseTypeList"
+        >
+        </nz-option>
+    </nz-select>
+</ng-container>

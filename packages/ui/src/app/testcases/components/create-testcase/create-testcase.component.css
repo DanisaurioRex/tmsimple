@@ -1,0 +1,117 @@
+form {
+    display: block;
+    margin-top: 0px;
+    padding: 25px 40px 35px;
+}
+
+form .title {
+    padding-bottom: 15px;
+    font-size: 21px;
+    font-weight: normal;
+}
+
+fieldset {
+    width: 100%;
+    margin: 20px 0 0 0;
+    padding: 0 0 16px 0;
+    border: 0;
+    border-bottom: 1px solid #dfe1e6;
+}
+
+fieldset .hint {
+    padding-top: 6px;
+    color: #5e6c84;
+    font-size: 10px;
+}
+
+label {
+    display: block;
+    padding-bottom: 5px;
+    color: #5e6c84;
+    font-weight: normal;
+    font-size: 13px;
+    font-family: 'CircularStdMedium';
+}
+
+nz-select {
+    width: 100%;
+}
+
+/* input,
+textarea,
+select {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #dfe1e6;
+    color: #172b4d;
+    background: #f4f5f7;
+    transition: background 0.1s;
+    font-family: 'CircularStdBook';
+    font-weight: normal;
+    font-size: 15px;
+    padding: 0;
+}
+
+input {
+    height: 28px;
+}
+
+select {
+    height: 32px;
+    display: flex;
+    padding-left: 10px;
+}
+
+input,
+textarea,
+select:hover {
+    background: #ebecf0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+    background: #fff;
+    border: 1px solid #4c9aff;
+    box-shadow: 0 0 0 1px #4c9aff;
+} */
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    vertical-align: middle;
+    line-height: 1;
+    padding: 0 9px;
+    white-space: nowrap;
+    border-radius: 3px;
+    transition: all 0.1s;
+    appearance: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+button.primary {
+    font-size: 14.5px;
+    color: #fff;
+    background: #0052cc;
+    font-family: 'CircularStdMedium';
+    font-weight: normal;
+    border: 0;
+}
+
+.buttons_container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding-top: 30px;
+    margin: 0;
+    border: 0;
+}

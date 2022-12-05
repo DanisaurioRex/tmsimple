@@ -11,14 +11,11 @@ describe('Test Case UI', () => {
             priority: 'Low',
         };
 
-        cy.visit('');
+        cy.visit('testcases/new');
 
         cy.getBySel('input_name').type(document.name);
         cy.getBySel('input_description').type(document.description);
-        cy.getBySel('select_test_type').click();
-        cy.getBySel('select_test_type_input_search').type(
-            `${document.type}{enter}`
-        );
+        cy.getBySel('select_test_type').type(`${document.type}{enter}`);
         cy.getBySel('select_test_priority').type(`${document.priority}{enter}`);
         cy.getBySel('button_submit').click();
 

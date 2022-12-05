@@ -10,5 +10,6 @@ COPY . .
 
 RUN npm run build
 RUN npm install mongodb
+CMD ["node", "dist/src/app.js"]
 
 EXPOSE 3000

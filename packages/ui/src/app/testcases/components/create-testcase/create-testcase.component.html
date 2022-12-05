@@ -1,0 +1,54 @@
+<div>
+    <form [formGroup]="testCase" (ngSubmit)="onSubmit()">
+        <div class="title">Create Test Case</div>
+        <div>
+            <fieldset>
+                <label for="name">Name</label>
+                <input
+                    id="input_name"
+                    formControlName="name"
+                    data-test="input_name"
+                    nz-input
+                />
+                <div class="hint">
+                    Concisely summarize the test Case in one or two sentences.
+                </div>
+            </fieldset>
+            <fieldset>
+                <label for="input_description">Description</label>
+                <textarea
+                    id="input_description"
+                    class="textarea-inline-control"
+                    formControlName="description"
+                    data-test="input_description"
+                    nz-input
+                    placeholder="Describe the test case in as much detail as you'd like."
+                    [nzAutosize]="{ minRows: 4, maxRows: 5 }"
+                >
+                </textarea>
+            </fieldset>
+            <fieldset>
+                <label>Test Case Type</label>
+                <testcase-type formControlName="type"></testcase-type>
+            </fieldset>
+            <fieldset>
+                <label>Priority</label>
+                <testcase-priority
+                    formControlName="priority"
+                ></testcase-priority>
+            </fieldset>
+            <fieldset class="buttons_container">
+                <button
+                    nz-button
+                    nzType="primary"
+                    type="submit"
+                    [disabled]="!testCase.valid"
+                    data-test="button_submit"
+                >
+                    <div>Create TestCase</div>
+                </button>
+            </fieldset>
+            {{ testCase.errors }}
+        </div>
+    </form>
+</div>

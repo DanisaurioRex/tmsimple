@@ -1,0 +1,27 @@
+<ng-container>
+    <nz-select
+        id="select_test_priority"
+        data-test="select_test_priority"
+        [(ngModel)]="priority"
+        (ngModelChange)="onPriorityChange($event)"
+        nzAllowClear
+        [nzCustomTemplate]="defaultTemplate"
+        nzShowSearch="true"
+    >
+        <nz-option
+            nzValue="{{ item }}"
+            nzLabel="{{ item }}"
+            *ngFor="let item of testCasePriorityList"
+        >
+        </nz-option>
+    </nz-select>
+    <ng-template #defaultTemplate let-selected>
+        <span
+            nz-icon
+            [nzType]="getIcon(selected.nzValue)"
+            [nzTwotoneColor]="getColor(selected.nzValue)"
+            [nzTheme]="'twotone'"
+        ></span>
+        {{ selected.nzLabel }}
+    </ng-template>
+</ng-container>

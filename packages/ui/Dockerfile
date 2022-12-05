@@ -1,15 +1,14 @@
-FROM node:18.9-alpine
+FROM node:18.9-alpine as build-step
 
-WORKDIR /usr/src/ui
+WORKDIR /usr/src/app/ui
 
 COPY package*.json ./
-COPY .babelrc ./
 
 RUN npm install
 
 COPY . .
 
 RUN npm run build
+CMD [ "npm", "run", "start" ]
 
-EXPOSE 80
-
+EXPOSE 4201

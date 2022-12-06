@@ -17,8 +17,8 @@ jobs:
       with:
         node-version: 16
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build
+    - run: npm run bootstrap
+    - run: npm run build    
   check:
     name: Linter & Prettier
     needs: build
@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: npm ci
+    - run: npm run bootstrap:server 
     - run: npm run unit-test:server
   unit-test-ui:
     name: UI Unit Tests
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: npm run build:ui-components
+    - run: npm run bootstrap:ui 
     - run: npm run unit-test:ui
   component-test-server:
     name: Server Component Tests
@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: npm ci
+    - run: npm run bootstrap:server 
     - run: npm run component-test:server
   component-test-ui:
     name: UI Component Tests
@@ -69,6 +69,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: isbang/compose-action@v1.2.0
-    - uses: cypress-io/github-action@v4.2.2
-      with:
-        project: ./test/e2e
+    - run: npm run bootstrap:e2e-test
+    - run: npm run api-test
+    - run: npm run ui-test

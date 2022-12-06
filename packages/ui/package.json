@@ -36,11 +36,11 @@
         "zone.js": "~0.11.4"
     },
     "devDependencies": {
-        "@types/node": "^18.7.13",
         "@angular-devkit/build-angular": "^14.2.8",
         "@angular/cli": "~14.2.8",
         "@angular/compiler-cli": "^14.2.0",
         "@types/jasmine": "~4.0.0",
+        "@types/node": "^18.7.13",
         "cypress": "^11.2.0",
         "jasmine-core": "~4.3.0",
         "karma": "~6.4.0",

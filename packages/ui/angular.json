@@ -19,18 +19,15 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
                         "assets": [
-                          "src/favicon.ico",
-                          "src/assets",
-                          {
-                            "glob": "**/*",
-                            "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
-                            "output": "/assets/"
-                          }
+                            "src/favicon.ico",
+                            "src/assets",
+                            {
+                                "glob": "**/*",
+                                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                                "output": "/assets/"
+                            }
                         ],
-                        "styles": [
-                          "src/theme.less",
-                          "src/styles.css"
-                        ],
+                        "styles": ["src/theme.less", "src/styles.css"],
                         "scripts": []
                     },
                     "configurations": {

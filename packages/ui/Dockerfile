@@ -1,4 +1,4 @@
-FROM node:18.9-alpine as build-step
+FROM node:19.6.0-alpine as build-step
 
 WORKDIR /usr/src/app/ui
 

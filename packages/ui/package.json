@@ -1,53 +1,53 @@
 {
-    "name": "@tmsimple/ui",
-    "version": "1.0.0",
-    "description": "TMSimple Graphic Interface",
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@github.com/DanisaurioRex/tmsimple.git"
-    },
-    "author": "Daniel Jiménez Ortiz",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/DanisaurioRex/tmsimple/testCases"
-    },
-    "homepage": "https://github.com/DanisaurioRex/tmsimple#readme",
-    "scripts": {
-        "ng": "ng",
-        "start": "ng serve --host=0.0.0.0 --port 4201",
-        "build": "ng build --configuration production --aot",
-        "watch": "ng build --watch --configuration development",
-        "test": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
-        "component-test": "cypress run --component"
-    },
-    "private": true,
-    "dependencies": {
-        "@angular/animations": "^14.2.0",
-        "@angular/common": "^14.2.0",
-        "@angular/compiler": "^14.2.0",
-        "@angular/core": "^14.2.0",
-        "@angular/forms": "^14.2.0",
-        "@angular/platform-browser": "^14.2.0",
-        "@angular/platform-browser-dynamic": "^14.2.0",
-        "@angular/router": "^14.2.0",
-        "ng-zorro-antd": "^14.1.1",
-        "rxjs": "~7.5.0",
-        "tslib": "^2.3.0",
-        "zone.js": "~0.11.4"
-    },
-    "devDependencies": {
-        "@types/node": "^18.7.13",
-        "@angular-devkit/build-angular": "^14.2.8",
-        "@angular/cli": "~14.2.8",
-        "@angular/compiler-cli": "^14.2.0",
-        "@types/jasmine": "~4.0.0",
-        "cypress": "^11.2.0",
-        "jasmine-core": "~4.3.0",
-        "karma": "~6.4.0",
-        "karma-chrome-launcher": "~3.1.0",
-        "karma-coverage": "~2.2.0",
-        "karma-jasmine": "~5.1.0",
-        "karma-jasmine-html-reporter": "~2.0.0",
-        "typescript": "^4.8.4"
-    }
+  "name": "@tmsimple/ui",
+  "version": "1.0.0",
+  "description": "TMSimple Graphic Interface",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DanisaurioRex/tmsimple.git"
+  },
+  "author": "Daniel Jiménez Ortiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DanisaurioRex/tmsimple/testCases"
+  },
+  "homepage": "https://github.com/DanisaurioRex/tmsimple#readme",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --host=0.0.0.0 --port 4201",
+    "build": "ng build --configuration production --aot",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
+    "component-test": "cypress run --component"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^15.1.4",
+    "@angular/common": "^15.1.4",
+    "@angular/compiler": "^15.1.4",
+    "@angular/core": "^15.1.4",
+    "@angular/forms": "^15.1.4",
+    "@angular/platform-browser": "^15.1.4",
+    "@angular/platform-browser-dynamic": "^15.1.4",
+    "@angular/router": "^15.1.4",
+    "ng-zorro-antd": "^14.1.1",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.13",
+    "@angular-devkit/build-angular": "^15.1.5",
+    "@angular/cli": "~15.1.5",
+    "@angular/compiler-cli": "^15.1.4",
+    "@types/jasmine": "~4.0.0",
+    "cypress": "^11.2.0",
+    "jasmine-core": "~4.3.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "^4.8.4"
+  }
 }

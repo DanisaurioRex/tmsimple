@@ -19,8 +19,10 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzListModule } from 'ng-zorro-antd/list';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { TestcaseTypeComponent } from './testcases/components/testcase-type/testcase-type.component';
+import { GenerateTestScenarioComponent } from './test-scenarios/components/generate-test-scenario/generate-test-scenario.component';
 
 registerLocaleData(en);
 
@@ -37,12 +39,14 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
         CreateTestcaseComponent,
         TestcasePriorityComponent,
         TestcaseTypeComponent,
+        GenerateTestScenarioComponent,
     ],
     imports: [
         NzIconModule,
         NzButtonModule,
         NzInputModule,
         NzSelectModule,
+		NzListModule,
         ReactiveFormsModule,
         BrowserModule,
         HttpClientModule,

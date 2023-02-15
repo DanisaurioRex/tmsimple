@@ -20,6 +20,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { TestcaseTypeComponent } from './testcases/components/testcase-type/testcase-type.component';
 import { GenerateTestScenarioComponent } from './test-scenarios/components/generate-test-scenario/generate-test-scenario.component';
@@ -47,6 +49,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
         NzInputModule,
         NzSelectModule,
 		NzListModule,
+		NzCardModule,
+		NzSpinModule,
         ReactiveFormsModule,
         BrowserModule,
         HttpClientModule,

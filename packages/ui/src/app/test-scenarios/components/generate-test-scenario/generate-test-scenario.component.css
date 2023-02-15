@@ -36,3 +36,8 @@ label {
 nz-select {
     width: 100%;
 }
+
+nz-spin {
+    text-align: center;
+    margin: 20px 0;
+}

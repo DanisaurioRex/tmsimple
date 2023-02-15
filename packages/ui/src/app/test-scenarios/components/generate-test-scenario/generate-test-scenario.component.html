@@ -1,6 +1,6 @@
 <div>
     <form [formGroup]="inputData" (ngSubmit)="onSubmit()">
-        <div class="title">Create Test Case</div>
+        <div class="title">Generate Test Scenarios</div>
         <div>
             <fieldset>
                 <label for="input_acceptance_criteria">Acceptance Criteria</label>
@@ -27,8 +27,16 @@
                 </button>
             </fieldset>
         </div>
-    </form>
-	<nz-list nzBordered nzSize="small">
-		<nz-list-item *ngFor="let item of testScenarios">{{item}}</nz-list-item>
-	  </nz-list>
+    </form>	
+	<nz-list nzBordered nzSize="small" nzHeader="Suggested Scenarios" nzGrid *ngIf="isLoading || isLoaded">
+		<nz-spin nzSimple [nzSpinning]="isLoading" [nzSize]="'large'"></nz-spin>
+		<div nz-row>
+			<div nz-col *ngFor="let item of testScenarios">
+				<nz-list-item>
+					<nz-card>{{item}}</nz-card>
+				</nz-list-item>
+			</div>
+			<nz-list-empty *ngIf="isLoaded && testScenarios.length == 0"/>
+		</div>
+	  </nz-list>	  
 </div>

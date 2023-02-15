@@ -1,0 +1,40 @@
+{
+	"data": {
+		"id": "cmpl-6kABaLBwPZLpeTOpTE1JzaFbeg7p1",
+		"object": "text_completion",
+		"created": 1676460262,
+		"model": "text-davinci-003",
+		"choices": [
+		  {
+			"text": "\n\n1. Test that the user is able to successfully reset their password by entering their email address and receiving a reset link.\n2. Test that the user is able to successfully reset their password by entering their username and receiving a reset link.\n3. Test that the user is able to successfully reset their password by answering their security questions and receiving a reset link.",
+			"index": 0,
+			"logprobs": null,
+			"finish_reason": "stop"
+		  }
+		],
+		"usage": {
+		  "prompt_tokens": 44,
+		  "completion_tokens": 75,
+		  "total_tokens": 119
+		}
+	},
+	"data2": {
+		"id": "cmpl-6kAvieJkE6ZzL03RroNcSw5D65ByI",
+		"object": "text_completion",
+		"created": 1676463122,
+		"model": "text-davinci-003",
+		"choices": [
+		  {
+			"text": "\n\n1. Test that a user can successfully request cash from their account at an ATM.\n2. Test that the amount of cash requested is accurately deducted from the user's account.\n3. Test that the user is able to receive the requested cash from the ATM.\n4. Test that the user is able to request cash from their account at multiple ATMs.\n5. Test that the user is able to request cash from their account at ATMs in different locations.",
+			"index": 0,
+			"logprobs": null,
+			"finish_reason": "stop"
+		  }
+		],
+		"usage": {
+		  "prompt_tokens": 51,
+		  "completion_tokens": 98,
+		  "total_tokens": 149
+		}
+	  }
+}

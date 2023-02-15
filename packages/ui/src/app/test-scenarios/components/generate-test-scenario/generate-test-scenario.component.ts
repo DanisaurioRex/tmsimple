@@ -13,19 +13,31 @@ export class GenerateTestScenarioComponent {
         acceptanceCriteria: ['', Validators.required],
     });
     testScenarios: string[] = [];
+    isLoading = false;
+	isLoaded = false;
 
     constructor(
-		private fb: FormBuilder, 
-		private http: HttpClient,
-		private testScenariosGenerator: TestScenariosGeneratorService
-	) {}
+        private fb: FormBuilder,
+        private http: HttpClient,
+        private testScenariosGenerator: TestScenariosGeneratorService
+    ) {}
 
     ngOnInit(): void {}
 
-    onSubmit() {
-		var acceptanceCriteria = this.inputData.controls['acceptanceCriteria'].value
-		if (acceptanceCriteria) {
-			this.testScenarios = this.testScenariosGenerator.generate(acceptanceCriteria);
-		}		
+    async onSubmit() {
+        this.isLoading = true;
+
+        try {
+            var acceptanceCriteria =
+                this.inputData.controls['acceptanceCriteria'].value;
+            if (acceptanceCriteria) {
+                this.testScenarios = await this.testScenariosGenerator.generate(
+                    acceptanceCriteria
+                );
+            }
+        } finally {
+            this.isLoading = false;
+			this.isLoaded = true;
+        }
     }
 }

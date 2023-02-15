@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { TestScenariosGeneratorService } from '../../services/test-scenarios-generator.service';
 
 @Component({
     selector: 'app-generate-test-scenario',
@@ -13,26 +14,18 @@ export class GenerateTestScenarioComponent {
     });
     testScenarios: string[] = [];
 
-    constructor(private fb: FormBuilder, private http: HttpClient) {}
+    constructor(
+		private fb: FormBuilder, 
+		private http: HttpClient,
+		private testScenariosGenerator: TestScenariosGeneratorService
+	) {}
 
     ngOnInit(): void {}
 
     onSubmit() {
-		this.testScenarios = [
-			'Verify that the password recovery feature is available on the login page.',
-			'Verify that the password recovery feature prompts the user to enter their email address.',
-		];
-        /*this.http
-            .post('http://localhost:3000/chetgpt', this.inputData.value)
-            .subscribe({
-                next: (data) => {
-                    console.log('ok');
-                    console.log(JSON.stringify(data, null, 2));
-                    
-                },
-                error: (error) => {
-                    console.error('There was an error!', error);
-                },
-            });*/
+		var acceptanceCriteria = this.inputData.controls['acceptanceCriteria'].value
+		if (acceptanceCriteria) {
+			this.testScenarios = this.testScenariosGenerator.generate(acceptanceCriteria);
+		}		
     }
 }

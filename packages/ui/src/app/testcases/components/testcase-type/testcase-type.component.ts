@@ -25,7 +25,7 @@ import { TestCaseType } from 'src/app/types';
             multi: true,
             useExisting: TestcaseTypeComponent,
         },
-    ],
+    ]
 })
 export class TestcaseTypeComponent
     implements ControlValueAccessor, Validator, OnInit
